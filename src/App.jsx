@@ -4,6 +4,7 @@ import ErrorPage from "./routes/ErrorPage";
 import FastestLap from "./components/FastestLap";
 import RootPage from "./routes/RootPage";
 import StratingGrid from "./components/StartingGrid";
+import Qualifying from "./components/qualifying";
 import Practice3 from "./components/Practice3";
 import Practice2 from "./components/Practice2";
 import Practice1 from "./components/Practice1";
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "starting-grid",
         element: <StratingGrid />,
+      },
+      {
+        path: "qualifying",
+        element: <Qualifying />,
       },
       {
         path: "practice-3",
