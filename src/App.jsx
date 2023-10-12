@@ -4,7 +4,7 @@ import ErrorPage from "./routes/ErrorPage";
 import FastestLap from "./components/FastestLap";
 import RootPage from "./routes/RootPage";
 import StratingGrid from "./components/StartingGrid";
-import Qualifying from "./components/qualifying";
+import Qualifying from "./components/Qualifying";
 import Practice3 from "./components/Practice3";
 import Practice2 from "./components/Practice2";
 import Practice1 from "./components/Practice1";
