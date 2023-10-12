@@ -309,7 +309,7 @@ const Qualifying = () => {
             row={"20"}
           />
           <div className="py-6">
-            <h4 className="text-[##545456] text-xs italic">
+            <h4 className="text-[#545456] text-xs italic">
               Q1 107% time - 1:38:430
             </h4>
           </div>
