@@ -29,14 +29,14 @@ const NavBar = () => {
       {nav ? (
         <div className="fixed w-full h-screen bg-black/80 flex flex-col justify-center items-center z-20 ease-in-out duration-200 md:hidden">
           <Link
-            to="/"
+            to="/standings/2023/drivers"
             className="w-[75%] flex justify-center items-center rounded-full shadow-lg bg-red-100 shadow-red-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200"
           >
             <TiGroup size={20} />
             <span className="pl-4">Teams</span>
           </Link>
           <Link
-            to="/recent"
+            to="/fastest-lap"
             className="w-[75%] flex justify-center items-center rounded-full shadow-lg bg-red-100 shadow-red-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200"
           >
             <GiPodium size={20} />
