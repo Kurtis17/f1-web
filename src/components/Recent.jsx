@@ -15,10 +15,7 @@ const Recent = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img
-              className="h-20"
-              src="https://i.pinimg.com/originals/4b/6f/26/4b6f2634fde2e9394228e16a2f65dd99.png"
-            />
+            <img className="h-20" src="h" />
           </a>
         </h1>
         <h1 className="text-4xl font-bold text-center uppercase px-2">
