@@ -13,6 +13,8 @@ import { Drivers23 } from "./data/drivers/Drivers23";
 import { Teams23 } from "./data/teams/Teams23";
 import CurrentDriverStandings from "./components/CurrentDriverStandings";
 import CurrentTeamStandings from "./components/CurrentTeamStandings";
+import DriverResults from "./components/DriverResults";
+import { Albon23, Alonso23 } from "./data/standings/DriverStandings";
 
 const router = createBrowserRouter([
   {
@@ -65,11 +67,11 @@ const router = createBrowserRouter([
       },
       {
         path: "albon-alexander",
-        element: <div>test 1</div>,
+        element: <DriverResults driverStats={Albon23} />,
       },
       {
         path: "alonso-fernando",
-        element: <div>test 2</div>,
+        element: <DriverResults driverStats={Alonso23} />,
       },
       {
         path: "bottas-valtteri",
