@@ -296,6 +296,7 @@ const RaceResults = () => {
           </div>
         </div>
       </div>
+      <div className="bg-[#f7f5f1] w-full p-8"></div>
     </div>
   );
 };

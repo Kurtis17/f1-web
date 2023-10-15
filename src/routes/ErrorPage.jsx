@@ -1,5 +1,6 @@
 import React from "react";
 import NavBar from "../components/NavBar";
+import FooterSec from "../components/FooterSec";
 
 const ErrorPage = () => {
   return (
@@ -26,6 +27,7 @@ const ErrorPage = () => {
           ></iframe>
         </div>
       </div>
+      <FooterSec />
     </div>
   );
 };
