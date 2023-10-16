@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { AiFillMail } from "react-icons/ai";
+import main from "../assets/main.png";
 import Recent from "./Recent";
 import RaceResults from "./RaceResults";
 import { Outlet } from "react-router-dom";
@@ -39,11 +40,7 @@ const Main = () => {
 
   return (
     <div id="main">
-      <img
-        className="w-full h-screen object-cover"
-        src="https://wallpapercave.com/wp/wp9001516.png"
-        alt=""
-      />
+      <img className="w-full h-screen object-cover" src={main} alt="" />
       <div className="w-full h-screen absolute top-0 left-0 bg-black/50 z-1">
         <div className="max-w-[700px] m-auto h-full w-full flex flex-col justify-center lg:items-start items-center">
           <h1 className="sm:text-5xl text-4xl font-bold text-white">
