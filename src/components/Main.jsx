@@ -25,7 +25,7 @@ const TeamColours = [
 
 const TeamTimers = [2740, 2540, 2400, 3500, 2410, 2040, 2610, 2980, 1720, 3030];
 
-const Main = () => {
+const Main = ({ upcoming }) => {
   const [currentIndex, setSeconds] = useState(0);
 
   useEffect(() => {
@@ -41,7 +41,9 @@ const Main = () => {
   return (
     <div id="main">
       <img className="w-full h-screen object-cover" src={main} alt="" />
-      <div className="w-full h-screen absolute top-0 left-0 bg-black/50 z-1">
+      <div
+        className={`w-full h-screen absolute top-[${upcoming}px] left-0 bg-black/50`}
+      >
         <div className="max-w-[700px] m-auto h-full w-full flex flex-col justify-center lg:items-start items-center">
           <h1 className="sm:text-5xl text-4xl font-bold text-white">
             Interacting with F1 Data
