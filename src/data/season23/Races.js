@@ -1,4 +1,4 @@
-export const Races23 = [
+export const Races = [
   {
     name: "Bahrain",
     track: "Sakhir International Circuit",

@@ -9,7 +9,11 @@ const StandingsMenu = ({ others }) => {
   const arrayUrl = currentUrl.pathname.split("/");
   const yearUrl = arrayUrl.find((part) => /^\d{4}$/.test(part));
   const optionUrl = arrayUrl.find(
-    (part) => part === "teams" || part === "drivers" || part === "races"
+    (part) =>
+      part === "teams" ||
+      part === "drivers" ||
+      part === "races" ||
+      part === "fastest-laps"
   );
   const scrollRef1 = useRef(null);
   const scrollRef2 = useRef(null);
@@ -108,52 +112,56 @@ const StandingsMenu = ({ others }) => {
           className="h-32 w-[27%] overflow-y-scroll no-scrollbar border-[#e9e9e9]"
           ref={scrollRef3}
         >
-          <ul>
-            <li className="text-lg font-medium pb-2 pl-10 uppercase">
-              <NavLink
-                to={`/standings/${yearUrl}/${optionUrl}`}
-                end
-                className={({ isActive }) =>
-                  isActive
-                    ? "font-bold underline decoration-[#d91d0c] underline-offset-2"
-                    : ""
-                }
-              >
-                All
-              </NavLink>
-            </li>
-            {others.map((other) => (
-              <li
-                className="text-lg font-medium pb-2 pl-10 uppercase"
-                key={other.id}
-              >
+          {others && others.length > 0 && (
+            <ul>
+              <li className="text-lg font-medium pb-2 pl-10 uppercase">
                 <NavLink
-                  to={`/standings/${yearUrl}/${optionUrl}/${other.name
-                    .toLowerCase()
-                    .replace(/\s+/g, "-")
-                    .replace(/,/g, "")}`}
+                  to={`/standings/${yearUrl}/${optionUrl}`}
+                  end
                   className={({ isActive }) =>
                     isActive
                       ? "font-bold underline decoration-[#d91d0c] underline-offset-2"
                       : ""
                   }
                 >
-                  {other.name}
+                  All
                 </NavLink>
               </li>
-            ))}
-          </ul>
+              {others.map((other) => (
+                <li
+                  className="text-lg font-medium pb-2 pl-10 uppercase"
+                  key={other.id}
+                >
+                  <NavLink
+                    to={`/standings/${yearUrl}/${optionUrl}/${other.name
+                      .toLowerCase()
+                      .replace(/\s+/g, "-")
+                      .replace(/,/g, "")}`}
+                    className={({ isActive }) =>
+                      isActive
+                        ? "font-bold underline decoration-[#d91d0c] underline-offset-2"
+                        : ""
+                    }
+                  >
+                    {other.name}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
-        <div className="w-[6.33%] grid grid-cols-1 place-items-center gap-12">
-          <BsChevronCompactUp
-            className="cursor-pointer text-[#7e7d8b] hover:text-black"
-            onClick={handleScrollUp(scrollRef3)}
-          />
-          <BsChevronCompactDown
-            className="cursor-pointer text-[#7e7d8b] hover:text-black"
-            onClick={handleScrollDown(scrollRef3)}
-          />
-        </div>
+        {others && others.length > 0 && (
+          <div className="w-[6.33%] grid grid-cols-1 place-items-center gap-12">
+            <BsChevronCompactUp
+              className="cursor-pointer text-[#7e7d8b] hover:text-black"
+              onClick={handleScrollUp(scrollRef3)}
+            />
+            <BsChevronCompactDown
+              className="cursor-pointer text-[#7e7d8b] hover:text-black"
+              onClick={handleScrollDown(scrollRef3)}
+            />
+          </div>
+        )}
       </div>
     </div>
   );

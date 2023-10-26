@@ -15,9 +15,9 @@ import CurrentDriverStandings from "./components/CurrentDriverStandings";
 import CurrentTeamStandings from "./components/CurrentTeamStandings";
 import DriverResults from "./components/DriverResults";
 import { Albon23, Alonso23 } from "./data/standings/DriverStandings";
-import Test123 from "./routes/Test123";
-import { Races23 } from "./data/season23/Races23";
+import { Races } from "./data/season23/Races";
 import CurrentSeasonResults from "./components/CurrentSeasonResults";
+import CurrentRaceResults from "./components/CurrentRaceResults";
 
 const router = createBrowserRouter([
   {
@@ -190,12 +190,19 @@ const router = createBrowserRouter([
   },
   {
     path: "/standings/2023/races",
-    element: <StandingsPage option={Races23} />,
+    element: <StandingsPage option={Races} />,
     errorElement: <ErrorPage />,
     children: [
       { path: "", element: <CurrentSeasonResults /> },
-      { path: "bahrain", element: "" },
+      { path: "bahrain", element: <CurrentRaceResults /> },
+      { path: "bahrain/fastest-lap", element: "" },
     ],
+  },
+  {
+    path: "/standings/2023/fastest-laps",
+    element: <StandingsPage option={null} />,
+    errorElement: <ErrorPage />,
+    children: [{ path: "", element: "" }],
   },
 ]);
 
