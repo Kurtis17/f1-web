@@ -9,7 +9,7 @@ const StandingsMenu = ({ others }) => {
   const arrayUrl = currentUrl.pathname.split("/");
   const yearUrl = arrayUrl.find((part) => /^\d{4}$/.test(part));
   const optionUrl = arrayUrl.find(
-    (part) => part === "teams" || part === "drivers"
+    (part) => part === "teams" || part === "drivers" || part === "races"
   );
   const scrollRef1 = useRef(null);
   const scrollRef2 = useRef(null);

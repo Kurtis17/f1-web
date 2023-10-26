@@ -15,6 +15,9 @@ import CurrentDriverStandings from "./components/CurrentDriverStandings";
 import CurrentTeamStandings from "./components/CurrentTeamStandings";
 import DriverResults from "./components/DriverResults";
 import { Albon23, Alonso23 } from "./data/standings/DriverStandings";
+import Test123 from "./routes/Test123";
+import { Races23 } from "./data/season23/Races23";
+import CurrentSeasonResults from "./components/CurrentSeasonResults";
 
 const router = createBrowserRouter([
   {
@@ -183,6 +186,15 @@ const router = createBrowserRouter([
         path: "perez-sergio",
         element: <div>test 2</div>,
       },
+    ],
+  },
+  {
+    path: "/standings/2023/races",
+    element: <StandingsPage option={Races23} />,
+    errorElement: <ErrorPage />,
+    children: [
+      { path: "", element: <CurrentSeasonResults /> },
+      { path: "bahrain", element: "" },
     ],
   },
 ]);

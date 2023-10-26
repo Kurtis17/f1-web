@@ -17,7 +17,11 @@ const ErrorPage = () => {
           <h2 className="flex sm:text-3xl text-2xl pt-4 text-white">
             Sorry, something went wrong
           </h2>
+          <h2 className="flex sm:text-xl text-2xl py-4 text-white">
+            Please enjoy our new F1 trailer while we try to fix the issue
+          </h2>
           <iframe
+            className="mb-4"
             id="ytplayer"
             type="text/html"
             width="640"
@@ -25,9 +29,6 @@ const ErrorPage = () => {
             src="https://www.youtube.com/embed/ms0papXj7FE?autoplay=1&origin=http://example.com"
             frameborder="0"
           ></iframe>
-          <h2 className="flex sm:text-xl text-2xl py-4 text-white">
-            Please enjoy our new F1 trailer while we try to fix the issue
-          </h2>
           <button
             type="button"
             class="inline-flex items-center px-4 py-2 text-sm font-semibold leading-6 text-white transition duration-150 ease-in-out border-2 border-[#e10600] bg-[#e10600] rounded-md shadow cursor-not-allowed mx-[40%]"
