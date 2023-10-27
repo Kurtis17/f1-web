@@ -18,14 +18,13 @@ const NavBar = () => {
       <RiMenu3Fill
         size={25}
         onClick={handleNav}
-        className="relative top-4 z-[99] md:hidden left-4 text-white cursor-pointer"
+        className="absolute top-4 z-[99] md:hidden left-4 text-white cursor-pointer"
       />
-      <Link
-        to="/"
-        className="w-full h-14 relative font-bold text-2xl text-white flex flex-col justify-center text-center bg-[#e10600] z-40"
-      >
-        <img src={Formula1White} alt="/" className="h-[22px] ml-2" />
-      </Link>
+      <div className="w-full h-14 relative font-bold text-2xl text-white flex justify-center text-center items-center bg-[#e10600] z-40">
+        <Link to="/">
+          <img src={Formula1White} alt="/" className="h-[22px]" />
+        </Link>
+      </div>
 
       {nav ? (
         <div className="fixed w-full h-screen  bg-black/80 flex flex-col justify-center items-center z-20 ease-in-out duration-200 md:hidden">

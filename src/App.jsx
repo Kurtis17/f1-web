@@ -22,7 +22,7 @@ import CurrentRaceResults from "./components/CurrentRaceResults";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <RootPage top={"205"} />,
+    element: <RootPage top />,
     errorElement: <ErrorPage />,
     children: [
       {

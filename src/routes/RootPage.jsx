@@ -5,12 +5,12 @@ import Main from "../components/Main";
 import FooterSec from "../components/FooterSec";
 import UpcomingRace from "../components/UpcomingRace";
 
-const RootPage = ({ top }) => {
+const RootPage = () => {
   return (
     <div>
       <NavBar />
       <UpcomingRace />
-      <Main upcoming={top} />
+      <Main />
       <Outlet />
       <FooterSec />
     </div>
