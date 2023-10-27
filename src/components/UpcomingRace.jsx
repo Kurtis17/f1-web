@@ -6,17 +6,20 @@ const UpcomingRace = () => {
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [inputDate] = useState("29 Oct 2023 08:00 PM");
-  const [currentDate] = useState(inputDate);
 
   useEffect(() => {
-    const changingDate = new Date(inputDate);
-    const currentDate = new Date();
-    const totalSeconds = (changingDate - currentDate) / 1000;
+    const interval = setInterval(() => {
+      const changingDate = new Date(inputDate);
+      const currentDate = new Date();
+      const totalSeconds = (changingDate - currentDate) / 1000;
 
-    setDays(formatTime(Math.floor(totalSeconds / 3600 / 24)));
-    setHours(Math.floor(totalSeconds / 3600) % 24);
-    setMinutes(Math.floor(totalSeconds / 60) % 60);
-  }, [currentDate]);
+      setDays(formatTime(Math.floor(totalSeconds / 3600 / 24)));
+      setHours(Math.floor(totalSeconds / 3600) % 24);
+      setMinutes(Math.floor(totalSeconds / 60) % 60);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   function formatTime(time) {
     return time < 10 ? `0${time}` : time;
