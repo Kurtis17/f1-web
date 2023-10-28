@@ -68,7 +68,7 @@ const UpcomingRace = () => {
               </div>
             </div>
             <div className="w-[102px] h-full flex justify-center items-center">
-              <div className="w-[72px] h-[72px]">
+              <div className="relative w-[72px] h-[72px]">
                 <Clock />
               </div>
             </div>
