@@ -30,7 +30,7 @@ const Clock = () => {
         alt="/"
         style={{
           transform: `rotate(${
-            (time.getHours() % 12) * 30 + (time.getMinutes() / 60) * 30
+            time.getMinutes() * 6 + time.getSeconds() * 0.1
           }deg)`,
         }}
         className="absolute right-[46.5%] top-[16%] translate-x-0 origin-[50%_84%] w-[6px] h-[30px]"
